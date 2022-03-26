@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Anak;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,6 +24,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'Rizky@gmail.com',
             'password' => bcrypt('12345'),
             'is_admin' => '1'
+        ]);
+        Anak::create([
+            'nama' => 'Rizky',
+            'umur' => 'rizky',
+            'tanggal_lahir' => '18',
         ]);
         // User::create([
         //     'name' => 'Doddy',
