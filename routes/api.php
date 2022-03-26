@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\AnakController;
+use App\Http\Controllers\API\AnaksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::resource('Anak', AnakController::class);
+Route::resource('anak', AnaksController::class);
