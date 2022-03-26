@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Anak;
 use Illuminate\Http\Request;
 
-class PembeliController extends Controller
+class AnakController extends Controller
 {
     /**
      * Display a listing of the resource.
