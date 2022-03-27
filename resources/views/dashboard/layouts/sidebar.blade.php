@@ -24,7 +24,7 @@
             Donasi
           </a>
         </li>
-        @can('admin')
+        {{-- @can('admin')
         <ul>
         <li class="nav-item">
           <a class="nav-link  {{ Request::is('dashboard/pengasuh*')? 'active' : '' }}" href="/dashboard/pengasuh">
@@ -33,7 +33,7 @@
           </a>
         </li>
     </ul>
-    @endcan
+    @endcan --}}
         <li class="nav-item">
             <a class="nav-link  {{ Request::is('dashboard/kebutuhan*')? 'active' : '' }}" href="/dashboard/kebutuhan">
               <span data-feather="box"></span>
@@ -46,7 +46,7 @@
             Laporan
           </a>
         </li>
-
+{{--
       @can('admin')
       <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span>
@@ -62,7 +62,7 @@
         </li>
 
       </ul>
-      @endcan
+      @endcan --}}
 
     </div>
   </nav>

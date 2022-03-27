@@ -18,7 +18,7 @@ class createKebutuhansTable extends Migration
             $table->string('nama_barang');
             $table->integer('jumlah_barang');
             $table->integer('harga_barang');
-            $table->bigInteger('donasi_id');
+            // $table->bigInteger('donasi_id');
             $table->timestamps();
         });
     }

@@ -42,7 +42,7 @@ Route::get('/', function () {
 
 
 Route::get('/dashboard/laporan', function () {
-    return view('dashboard/laporan/index', [
+    return view('dashboard/laporan/cetak_anak', [
     ]);
 });
 
@@ -109,8 +109,8 @@ Route::get('/beranda', function () {
 
 Route::resource('/dashboard/donasi', DonasiController::class )->middleware('admin');
 Route::resource('/dashboard/pengasuh', DashboardPengasuhController::class )->middleware('admin');
-Route::resource('/dashboard/kebutuhan', KebutuhanController::class )->middleware('auth');
-Route::resource('/dashboard/kebutuhan', Kebutuhan2Controller::class )->middleware('auth');
+Route::resource('/dashboard/kebutuhan', KebutuhanController::class )->middleware('admin');
+Route::resource('/dashboard/kebutuhan', Kebutuhan2Controller::class )->middleware('admin');
 
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')
 ->middleware('admin');

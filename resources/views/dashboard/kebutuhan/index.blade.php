@@ -58,7 +58,7 @@
             <td> </td>
             <td> </td>
             <td>
-                  <b>tal</b>
+                  <b>total</b>
                 {{ $total }}
             </td>
 
@@ -68,16 +68,12 @@
          @foreach ($donasi as $d )
           <?php $nom += $d->nominal; ?>
          @endforeach
-
+         {{  $d= $donasi->sum('nominal') }}
+         {{  $k= $kebutuhan->sum('harga_barang') }}
                 <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
             <td>
-                  <b>Total donasi</b>
-                {{ $nom }}
+                  <b>Sisa donasi</b>
+               {{     $sisa = $d - $k }}
             </td>
         </tr>
 

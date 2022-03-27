@@ -25,11 +25,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345'),
             'is_admin' => '1'
         ]);
-        Anak::create([
-            'nama' => 'Rizky',
-            'umur' => 'rizky',
-            'tanggal_lahir' => '18',
-        ]);
+
         // User::create([
         //     'name' => 'Doddy',
         //     'email' => 'Doddy@gmail.com',
