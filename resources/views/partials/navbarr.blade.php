@@ -12,9 +12,8 @@
 
         <ul>
           <li> <a class="nav-link {{ Request::is('donasi*')? 'active' : '' }}" href="/donasi/create">Donasi</a></li>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto  " href="#hero">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="/posts">blog</a></li>
@@ -35,7 +34,7 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul> --}}
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
            @auth
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

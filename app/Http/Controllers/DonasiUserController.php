@@ -46,7 +46,7 @@ class DonasiUserController extends Controller
 
 
       Donasi::create($validatedData);
-      return redirect('donasi/create')->with('success', 'New Post has been added');
+      return redirect('/')->with('success', 'Donasi Berhasil dilakukan');
     }
 
     /**
