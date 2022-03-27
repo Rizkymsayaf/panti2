@@ -20,6 +20,7 @@ use App\Http\Controllers\UserDonasiController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardPengasuhController;
+use App\Http\Controllers\Cetak_anakController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -40,11 +41,6 @@ Route::get('/', function () {
     ]);
 });
 
-
-Route::get('/dashboard/laporan', function () {
-    return view('dashboard/laporan/cetak_anak', [
-    ]);
-});
 
 Route::get('/about', function () {
     return view('about', [
@@ -118,8 +114,16 @@ Route::resource('/donasi/create', DonasiUserController::class )->middleware('aut
 Route::resource('/laporan', LaporanController::class )->middleware('auth');
 
 
-Route::get('/profile', function () {
-    return view('profile', [
-        "title" => "profile",
+Route::get('/dashboard/laporan/cetak_anaktanggak', function () {
+    return view('p', [
     ]);
 });
+
+
+Route::resource('/dashboard/laporan/cetak_anak', Cetak_anakController::class )->middleware('admin');
+Route::resource('/dashboard/laporan/cetak_donasi', Cetak_donasiController::class )->middleware('admin');
+
+Route::get('/dashboard/laporan/', function () {
+    return view('dashboard/laporan/index', [
+    ]);
+})->middleware('admin');
