@@ -21,6 +21,12 @@ class DonasiController extends Controller
          return view('dashboard.donasi.index', ['donasi' => $donasi]);
 
     }
+    public function laporan()
+    {
+        $donasi = Donasi::all();
+         return view('dashboard.donasi.laporan', ['donasi' => $donasi]);
+
+    }
 
     /**
      * Show the form for creating a new resource.

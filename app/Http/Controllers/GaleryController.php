@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anak;
+use App\Models\Galery;
 use App\Http\Requests\StoreAnakRequest;
 use App\Http\Requests\UpdateAnakRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class AnakController extends Controller
+class GaleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +18,8 @@ class AnakController extends Controller
      */
     public function index()
     {
-        $anak = Anak::all();
-        return view('dashboard.anak.index', compact('anak'));
+        $galery = Galery::all();
+        return view('dashboard.galery.index', compact('galery'));
     }
 
     /**
@@ -28,7 +29,7 @@ class AnakController extends Controller
      */
     public function create()
     {
-        return view('dashboard.anak.create');
+        return view('dashboard.galery.create');
     }
 
     /**
@@ -40,18 +41,15 @@ class AnakController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama' => 'required|max:255',
-            'umur' => 'required',
-            'tanggal_lahir' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:30000',
         ]);
 
       if($request->file('image')){
-        $validatedData['image'] = $request->file('image')->store('anak-images', ['disk' => 'local']);
+        $validatedData['image'] = $request->file('image')->store('galery-images', ['disk' => 'local']);
     }
 
-      Anak::create($validatedData);
-      return redirect('dashboard/anak')->with('success', 'Data Baru berhasil ditambahkan');
+      Galery::create($validatedData);
+      return redirect('dashboard/galery')->with('success', 'Data Baru berhasil ditambahkan');
     }
 
     /**
@@ -62,8 +60,8 @@ class AnakController extends Controller
      */
     public function show($id)
     {
-        $anak = Anak::findOrFail($id);
-        return view('dashboard.anak.show', compact('anak'));
+        $galery = Galery::findOrFail($id);
+        return view('dashboard.galery.show', compact('galery'));
     }
 
     /**
@@ -72,11 +70,11 @@ class AnakController extends Controller
      * @param  \App\Models\Anak  $anak
      * @return \Illuminate\Http\Response
      */
-    public function edit(Anak $anak)
+    public function edit(Galery $galery)
     {
         return view('dashboard.anak.edit', [
-            'a' => $anak,
-            'anaks' => Anak::all()
+            'g' => $galery,
+            'galerys' => Galery::all()
         ]);
     }
 
@@ -87,13 +85,10 @@ class AnakController extends Controller
      * @param  \App\Models\Anak  $anak
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Anak $anak)
+    public function update(Request $request, Galery $galery)
     {
         $validatedData = $request->validate([
-            'nama' => 'required|max:255',
-            'umur' => 'required',
-            'tanggal_lahir' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:30000',
         ]);
 
         if($request->file('image')){
@@ -101,12 +96,12 @@ class AnakController extends Controller
                 Storage::delete($request->oldImage);
             }
 
-            $validatedData['image'] = $request->file('image')->store('anak-images', ['disk' => 'local']);
+            $validatedData['image'] = $request->file('image')->store('galery-images', ['disk' => 'local']);
         }
 
-        Anak::where('id', $anak->id)
+        Galery::where('id', $galery->id)
         -> update($validatedData);
-      return redirect('dashboard/anak')->with('success', 'New Data has been added');
+      return redirect('dashboard/galery')->with('success', 'data baru berhasil ditambahkan');
 
 
     }
@@ -117,12 +112,12 @@ class AnakController extends Controller
      * @param  \App\Models\Anak  $anak
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Anak $anak)
+    public function destroy(Galery $galery)
     {
-        if($anak->image){
-            Storage::delete($anak->image);
+        if($galery->image){
+            Storage::delete($galery->image);
         }
-        Anak::destroy($anak->id);
-        return redirect('/dashboard/anak')->with('success', 'data has been deleted');
+        Galery::destroy($galery->id);
+        return redirect('/dashboard/galery')->with('success', 'data berhasil dihapus');
     }
 }

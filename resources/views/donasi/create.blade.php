@@ -10,7 +10,7 @@
       <form method="post" action="/donasi/create " class="mb-5" >
         @csrf
         <div class="mb-3">
-           <label for="nama" class="form-label">nama</label>
+           <label for="nama" class="form-label"> nama</label>
           <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" required  autofocus value="{{ old('nama') }}">
           @error('nama')
           <div class="invalid-feedback">
@@ -53,6 +53,7 @@
 
             @enderror
           </div>
+
         <div class="mb-3">
           <label for="nominal" class="form-label">Nominal</label>
           <input type="number" class="form-control @error('nominal') is-invalid @enderror" id="nominal" name="nominal" required  autofocus value="{{ old('nominal') }}">
@@ -62,8 +63,9 @@
           </div>
 
           @enderror
-        <button type="submit" class="btn btn-primary">Create</button>
+          <button class="btn btn-success" onclick="return confirm('Apakah Anda Yakin?')">Donasikan</button>
       </form>
+
   </div>
 
 @endsection

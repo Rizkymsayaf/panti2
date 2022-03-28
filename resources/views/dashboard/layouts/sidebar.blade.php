@@ -46,6 +46,19 @@
             Laporan
           </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link  {{ Request::is('dashboard/pesan*')? 'active' : '' }}" href="/dashboard/pesan">
+              <span data-feather="message-square"></span>
+              Pesan
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link  {{ Request::is('dashboard/galery*')? 'active' : '' }}" href="/dashboard/galery">
+              <span data-feather="image"></span>
+              Galery
+            </a>
+          </li>
 {{--
       @can('admin')
       <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">

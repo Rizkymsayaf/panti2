@@ -45,18 +45,18 @@ class AnaksController extends Controller
      */
     public function store(Request $request)
     {
-        $anak = Anak::find($id);
-            $anak->nama = $request->nama;
-            $anak->umur = $request->umur;
-            $anak->tanggal_lahir = $request->tanggal_lahir;
-            $anak->image = $request->image;
-            $anak->save();
-            return response()->json([
-                'status' => true,
-                'code' => 201,
-                'message' => 'Data Anak berhasil dibuat',
-                'data' => $anak,
-            ]);
+        // $anak = Anak::find($id);
+        //     $anak->nama = $request->nama;
+        //     $anak->umur = $request->umur;
+        //     $anak->tanggal_lahir = $request->tanggal_lahir;
+        //     $anak->image = $request->image;
+        //     $anak->save();
+        //     return response()->json([
+        //         'status' => true,
+        //         'code' => 201,
+        //         'message' => 'Data Anak berhasil dibuat',
+        //         'data' => $anak,
+        //     ]);
     }
 
     /**

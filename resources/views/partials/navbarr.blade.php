@@ -13,7 +13,7 @@
         <ul>
           <li> <a class="nav-link {{ Request::is('donasi*')? 'active' : '' }}" href="/donasi/create">Donasi</a></li>
           <li><a class="nav-link scrollto  " href="#hero">Beranda</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="/posts">blog</a></li>
@@ -34,14 +34,17 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul> --}}
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
+          <li><a class="nav-link scrollto {{ Request::is('pesan*')? 'active' : '' }}" href="/pesan/create">Hubungi Kami</a></li>
            @auth
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Welcome  {{ auth()->user()->name }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  {{-- <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window-reverse"></i> My Dashboard</a></li> --}}
+                    @if ('is_admin' == 1)
+                  <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window-reverse"></i> My Dashboard</a></li>
+
+                    @endif
                   <li><hr class="dropdown-divider"></li>
                   <form action="/logout" method="post">
                       @csrf

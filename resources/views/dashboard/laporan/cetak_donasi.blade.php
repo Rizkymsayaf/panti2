@@ -13,12 +13,10 @@
   @endif
 
   <div class="table-responsive col-lg-8">
-      <a href="/dashboard/donasi/create" class="btn btn-primary mb-3">Create New </a>
-      <a href="/dashboard/laporan/cetak_donasi" class="btn btn-success mb-3">Print </a>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">No</th>
           <th scope="col">Nama</th>
           <th scope="col">Alamat</th>
           <th scope="col">No_Rekening</th>
@@ -64,7 +62,10 @@
             </td>
         </tr>
 
+        <script type="text/javascript">
+            window.print();
 
+        </script>
 
       </tbody>
     </table>

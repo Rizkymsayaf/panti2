@@ -14,7 +14,6 @@
 
   <div class="table-responsive col-lg-8">
       <a href="/dashboard/kebutuhan/create" class="btn btn-primary mb-3">Buat Data </a>
-      <a href="/dashboard/laporan/cetak_kebutuhan" class="btn btn-success mb-3">Print </a>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
@@ -39,16 +38,7 @@
             <td>{{  $k->jumlah_barang}}</td>
             <td>{{  $k->harga_barang}}</td>
             <td>{{  $k->nama}}</td>
-            <td>
-                {{-- <a href="{{route('kebutuhan.show',$k->id)}}" class="badge bg-info"> <span data-feather="eye">show</a> --}}
-                    {{-- <a href="/dashboard/kebutuhan/{{ $k->id }}/edit" class="badge bg-warning"> <span data-feather="edit">edit</span></a> --}}
-                    <form action="/dashboard/kebutuhan/{{ $k->id }}" method="POST" class="d-inline">
-                        @method('delete')
-                        @csrf
-                        <button class="badge bg-danger border-0" onclick="return confirm('Apakah Anda Yakin')"><span data-feather="x-circle">hapus</span></button>
-                    </form>
-            </td>
-            </td>
+
 
         </tr>
 
@@ -82,5 +72,10 @@
 
       </tbody>
     </table>
+
+    <script type="text/javascript">
+        window.print();
+
+    </script>
   </div>
 @endsection

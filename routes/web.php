@@ -21,6 +21,11 @@ use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardPengasuhController;
 use App\Http\Controllers\Cetak_anakController;
+use App\Http\Controllers\DashboardPesanController;
+use App\Http\Controllers\PesanUserController;
+use App\Http\Controllers\Cetak_donasiController;
+use App\Http\Controllers\Cetak_pesanController;
+use App\Http\Controllers\Cetak_kebutuhanController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -88,7 +93,7 @@ Route::post('/register', [RegisterController::class, "store"]);
 
 Route::get('dashboard', function() {
         return view('dashboard.index');
-})->middleware('auth');
+})->middleware('admin');
 
 // Route::get('donasi', [DonasiController::class,'index'])->middleware('auth');
 // Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
@@ -122,8 +127,18 @@ Route::get('/dashboard/laporan/cetak_anaktanggak', function () {
 
 Route::resource('/dashboard/laporan/cetak_anak', Cetak_anakController::class )->middleware('admin');
 Route::resource('/dashboard/laporan/cetak_donasi', Cetak_donasiController::class )->middleware('admin');
+Route::resource('/dashboard/laporan/cetak_pesan', Cetak_pesanController::class )->middleware('admin');
+Route::resource('/dashboard/laporan/cetak_kebutuhan', Cetak_kebutuhanController::class )->middleware('admin');
 
 Route::get('/dashboard/laporan/', function () {
     return view('dashboard/laporan/index', [
     ]);
 })->middleware('admin');
+
+
+
+Route::resource('/dashboard/pesan', DashboardPesanController::class )->middleware('admin');
+
+Route::resource('/pesan/create', PesanUserController::class )->middleware('auth');
+
+
