@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AnaksController;
 use App\Http\Controllers\API\PesanController;
+use App\Http\Controllers\API\DonasiController;
 
 /*
 |--------------------------------------------------------------------------
