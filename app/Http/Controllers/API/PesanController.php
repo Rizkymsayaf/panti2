@@ -7,7 +7,7 @@ use App\Models\Pesan;
 use Illuminate\Http\Request;
 use DB;
 
-class DonasiController extends Controller
+class PesanController extends Controller
 {
     /**
      * Display a listing of the resource.
