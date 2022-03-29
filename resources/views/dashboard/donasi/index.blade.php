@@ -13,7 +13,7 @@
   @endif
 
   <div class="table-responsive col-lg-8">
-      <a href="/dashboard/donasi/create" class="btn btn-primary mb-3">Create New </a>
+      {{-- <a href="/dashboard/donasi/create" class="btn btn-primary mb-3">Create New </a>s --}}
       <a href="/dashboard/laporan/cetak_donasi" class="btn btn-success mb-3">Print </a>
     <table class="table table-striped table-sm">
       <thead>
