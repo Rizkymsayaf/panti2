@@ -26,6 +26,8 @@ use App\Http\Controllers\PesanUserController;
 use App\Http\Controllers\Cetak_donasiController;
 use App\Http\Controllers\Cetak_pesanController;
 use App\Http\Controllers\Cetak_kebutuhanController;
+use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\Galery2Controller;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -140,5 +142,10 @@ Route::get('/dashboard/laporan/', function () {
 Route::resource('/dashboard/pesan', DashboardPesanController::class )->middleware('admin');
 
 Route::resource('/pesan/create', PesanUserController::class )->middleware('auth');
+
+
+
+Route::resource('/dashboard/galery', GaleryController::class )->middleware('admin');
+Route::resource('/galery', Galery2Controller::class );
 
 

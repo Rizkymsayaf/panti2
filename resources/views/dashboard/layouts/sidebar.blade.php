@@ -7,12 +7,12 @@
             Dashboard
           </a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard/posts*')? 'active' : '' }}" href="/dashboard/posts">
             <span data-feather="file-text"></span>
             My posts
           </a>
-        </li>
+        </li> --}}
         <li class="nav-item">
           <a class="nav-link  {{ Request::is('dashboard/anak*')? 'active' : '' }}" href="/dashboard/anak">
             <span data-feather="user-check"></span>
@@ -40,25 +40,25 @@
               Kebutuhan
             </a>
           </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link  {{ Request::is('dashboard/laporan*')? 'active' : '' }}" href="/dashboard/laporan">
             <span data-feather="book"></span>
             Laporan
           </a>
-        </li>
+        </li> --}}
         <li class="nav-item">
             <a class="nav-link  {{ Request::is('dashboard/pesan*')? 'active' : '' }}" href="/dashboard/pesan">
               <span data-feather="message-square"></span>
               Pesan
             </a>
           </li>
-
+{{--
           <li class="nav-item">
             <a class="nav-link  {{ Request::is('dashboard/galery*')? 'active' : '' }}" href="/dashboard/galery">
               <span data-feather="image"></span>
               Galery
             </a>
-          </li>
+          </li> --}}
 {{--
       @can('admin')
       <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">

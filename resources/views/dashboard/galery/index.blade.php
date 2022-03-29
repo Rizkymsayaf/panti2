@@ -16,12 +16,12 @@
   @endif
 
   <div class="table-responsive col-lg-8">
-      <a href="/dashboard/galery/create" class="btn btn-primary mb-3">Create New </a>
+      <a href="/dashboard/galery/create" class="btn btn-primary mb-3">Tambah Data </a>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Image</th>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
         </tr>
       </thead>
       <tbody>
@@ -29,10 +29,8 @@
 
           <tr>
             <td>{{ $loop->iteration }}</td>
-            <td>{{ $g->image }}</td>
+            <td> <img src="{{ asset($g->image) }}" alt="{{ $g->image }}" class="img-fluid mt-3"></td>
             <td>
-                <a href="{{route('galery.show',$g->id)}}" class="badge bg-info"> <span data-feather="eye">show</a>
-                    <a href="/dashboard/galery/{{ $g->id }}/edit" class="badge bg-warning"> <span data-feather="edit">edit</span></a>
                     <form action="/dashboard/galery/{{ $g->id }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf

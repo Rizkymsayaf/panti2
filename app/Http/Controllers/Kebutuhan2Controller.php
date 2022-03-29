@@ -35,7 +35,7 @@ class Kebutuhan2Controller extends Controller
 
 
       Kebutuhan::create($validatedData);
-      return redirect('dashboard/kebutuhan')->with('success', 'New Post has been added');
+      return redirect('dashboard/kebutuhan')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     public function show($id)

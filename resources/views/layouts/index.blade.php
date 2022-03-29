@@ -44,7 +44,7 @@
 
 
 
-    <!-- ======= Portfolio Section ======= -->
+    {{-- <!-- ======= Portfolio Section ======= -->
 
 
     <!-- ======= Breadcrumbs ======= -->
@@ -110,7 +110,7 @@
         </div>
 
       </div>
-    </section><!-- End Portfolio Details Section -->
+    </section><!-- End Portfolio Details Section --> --}}
 
 
     <!-- ======= Team Section ======= -->

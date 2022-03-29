@@ -94,7 +94,7 @@ class KebutuhanController extends Controller
 
         Kebutuhan::where('id', $kebutuhan->id)
         -> update($validatedData);
-      return redirect('dashboard/kebutuhan')->with('success', 'New Post has been added');
+      return redirect('dashboard/kebutuhan')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
