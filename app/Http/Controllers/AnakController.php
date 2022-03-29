@@ -43,7 +43,7 @@ class AnakController extends Controller
             'nama' => 'required|max:255',
             'umur' => 'required',
             'tanggal_lahir' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:30000',
         ]);
 
       if($request->file('image')){
