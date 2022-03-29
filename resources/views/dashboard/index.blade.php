@@ -102,20 +102,20 @@
                 </a>
             </div>
             <!-- ./col -->
-            {{-- <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <a href="">
+                    <a href="dashboard/pesan">
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>{{ DB::table('kategori')->count() }}</h3>
-                                <p>Total Kategori</p>
+                                <h3>{{ DB::table('pesans')->count() }}</h3>
+                                <p>Total Pesan</p>
                             </div>
                             <div class="icon">
                                 <i class="ion far fa-address-book"></i>
                             </div>
                         </div>
                     </a>
-                </div> --}}
+                </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                 <!-- small box -->
