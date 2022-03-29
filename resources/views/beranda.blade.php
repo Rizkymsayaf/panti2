@@ -10,6 +10,6 @@
 
           <a href="/donasi/create" class="text-decoration-none btn btn-success">Donasi Sekarang</a>
         </div>
-      </div>
-
+      </div>  
+     
 @endsection
